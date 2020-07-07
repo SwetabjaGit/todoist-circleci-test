@@ -251,6 +251,7 @@ header {
   ============================================ */
 .sidebar {
   @include no-select();
+  
   width: 266px;
   height: calc(100vh);
   padding-top: 74px;
@@ -258,7 +259,6 @@ header {
   overflow-x: hidden;
   overflow-y: hidden;
   border-right: $generic-border;
-  background-color: #fafafa;
 
   @include mq('900px') {
     display: none;
@@ -272,8 +272,15 @@ header {
     }
   }
 
+
+
   &__project {
     cursor: pointer;
+    
+    &.active, &:hover {
+      font-weight: bold;
+      background-color: white;
+    }
 
     div:nth-child(1) {
       padding: 5px 0;
@@ -295,11 +302,6 @@ header {
       svg {
         color: #cacaca;
       }
-    }
-
-    &.active, &:hover {
-      font-weight: bold;
-      background-color: white;
     }
 
     &:nth-child(1) {

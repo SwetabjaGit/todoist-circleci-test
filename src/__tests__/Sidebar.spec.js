@@ -4,6 +4,7 @@ import { Sidebar } from '../components/layout/Sidebar';
 
 beforeEach(cleanup);
 
+
 jest.mock('../context', () => ({
   useSelectedProjectValue: jest.fn(() => ({
     setSelectedProject: jest.fn(() => 'INBOX'),
@@ -14,12 +15,14 @@ jest.mock('../context', () => ({
       {
         name: '🙌 THE OFFICE',
         projectId: '1',
-        userId: 'jlIFXIwyAL3tzHMtzRbw',
+        userId: 'yc4gLUBdYmMTmYZ9YWgg',
         docId: 'michael-scott',
       },
     ],
   })),
 }));
+
+
 
 describe('<Sidebar />', () => {
   describe('Success', () => {
