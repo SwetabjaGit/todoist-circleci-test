@@ -1,4 +1,5 @@
 /* eslint-disable no-nested-ternary */
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 import moment from 'moment';
 import { firebase } from '../firebase';
@@ -16,8 +17,6 @@ export const useTasks = selectedProject => {
       .firestore()
       .collection('tasks')
       .where('userId', '==', USER_ID);
-
-    console.log(selectedProject);
 
     unsubscribe =
       selectedProject && !collatedTasksExist(selectedProject)
@@ -72,7 +71,6 @@ export const useProjects = () => {
           ...project.data(),
           projectId: project.id,
         }));
-        console.log({ allProjects });
 
         if (JSON.stringify(allProjects) !== JSON.stringify(projects)) {
           setProjects(allProjects);
